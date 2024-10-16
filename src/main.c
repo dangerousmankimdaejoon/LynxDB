@@ -6,12 +6,15 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <sys/prctl.h>
 #include <sys/stat.h>
 #include <time.h>
 
 #define LOG_DIR "log"
 #define PORT 5031
+
 #define BLOCK_SIZE 8192
+#define PROCESS_POOL_SIZE 2
 
 /*
  * create_log_directory - logging function
@@ -65,13 +68,13 @@ FILE* open_log_file() {
 }
 
 /*
- * log_message - logging function
+ * lx_log - logging function
  * @level: log level
  * @format: log format
  * 
  * logging message
  */
-void log_message(const char *level, const char *format, ...) {
+void lx_log(const char *level, const char *format, ...) {
     FILE *log_file = open_log_file();
 
     time_t now = time(NULL);
@@ -89,12 +92,52 @@ void log_message(const char *level, const char *format, ...) {
     fclose(log_file);
 }
 
+void lx_info(const char *format, ...) {
+    va_list args;
+    va_start(args, format);
+    
+    lx_log("INFO", format, args);
+
+    va_end(args);
+}
+
+/*
+ * create_worker_processes - create process pool
+ * 
+ * 
+ */
+void create_worker_processes(int server_sock) {
+    for (int i = 0; i < PROCESS_POOL_SIZE; i++) {
+        pid_t pid = fork();
+        if (pid == -1) {
+            perror("fork failed");
+            exit(EXIT_FAILURE);
+        }
+        if (pid == 0) {
+            while (1) {
+                int client_sock;
+                struct sockaddr_in client_addr;
+                socklen_t client_len = sizeof(client_addr);
+
+                client_sock = accept(server_sock, (struct sockaddr *)&client_addr, &client_len);
+                if (client_sock < 0) {
+                    perror("accept failed");
+                    exit(EXIT_FAILURE);
+                }
+
+                handle_client(client_sock);
+            }
+            exit(0);
+        }
+    }
+}
+
 void handle_client(int client_sock) {
     char command[BLOCK_SIZE];
     char buffer[BLOCK_SIZE];
 
     recv(client_sock, command, sizeof(command), 0);
-    log_message("INFO", "Received command:");
+    lx_log("INFO", "Received command:");
 
     if (strncmp(command, "write", 5) == 0) {
         FILE* file = fopen("daemon_datafile.db", "wb");
@@ -125,15 +168,14 @@ void handle_client(int client_sock) {
     close(client_sock);
 }
 
-int main() {
+int main(int argc, char *argv[]) {
     
-    printf("start\n");
+    printf("start lynxDB\n");
 
     pid_t pid;
+
     pid = fork();
-    
-    printf("pid : %d\n", pid);
-    
+
     if (pid < 0) {
         exit(EXIT_FAILURE);
     }
@@ -148,14 +190,17 @@ int main() {
     umask(0);
     chdir("/");
 
-    freopen("/home/seer/lynxdb/build/lynxdb_stdout.log", "a", stdout);
-    freopen("/home/seer/lynxdb/build/lynxdb_stderr.log", "a", stderr);
-    
     close(STDIN_FILENO);
     close(STDOUT_FILENO);
     close(STDERR_FILENO);
+
+    strncpy(argv[0], "prm_lynx", strlen(argv[0]));
+
+    lx_info("arvg[0] : %s", argv[0]);
     
-    log_message("INFO", "[Starting lynx]");
+    lx_log("INFO", "*******************");
+    lx_log("INFO", "   Starting lynx   ");
+    lx_log("INFO", "*******************");
 
     int server_sock, client_sock;
     struct sockaddr_in server_addr, client_addr;
@@ -163,15 +208,15 @@ int main() {
     int opt = 1;
 
     server_sock = socket(AF_INET, SOCK_STREAM, 0);
-    log_message("INFO", "server_sock : %d", server_sock);
+    lx_log("INFO", "server_sock : %d", server_sock);
 
     if (server_sock == -1) {
-        log_message("ERROR", "Socket failed");
+        lx_log("ERROR", "Socket failed");
         exit(EXIT_FAILURE);
     }
 
     if (setsockopt(server_sock, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt))) {
-        log_message("ERROR", "setsockopt");
+        lx_log("ERROR", "setsockopt");
         exit(EXIT_FAILURE);
     }
 
@@ -180,39 +225,18 @@ int main() {
     server_addr.sin_port = htons(PORT);
 
     if (bind(server_sock, (struct sockaddr*)&server_addr, sizeof(server_addr)) < 0) {
-        log_message("ERROR", "Bind failed");
+        lx_log("ERROR", "Bind failed");
         close(server_sock);
         exit(EXIT_FAILURE);
     }
 
     if (listen(server_sock, 3) < 0) {
-        log_message("ERROR", "Listen failed");
+        lx_log("ERROR", "Listen failed");
         exit(EXIT_FAILURE);
     }
 
-    while (1) {
-        client_sock = accept(server_sock, (struct sockaddr*)&client_addr, &addr_len);
-        if (client_sock == -1) {
-            log_message("ERROR", "Accept failed");
-            exit(EXIT_FAILURE);
-        }
-
-        pid = fork();
-            
-        if (pid == -1) {
-            log_message("ERROR", "Fork failed");
-            close(client_sock);
-            continue;
-        }
-        
-        if (pid == 0) {
-            close(server_sock);
-            handle_client(client_sock);
-        } else {
-            close(client_sock);
-            waitpid(-1, NULL, WNOHANG);
-        }
-    }
+    // create process pool
+    create_worker_processes(server_sock);
 
     close(server_sock);
     return 0;
