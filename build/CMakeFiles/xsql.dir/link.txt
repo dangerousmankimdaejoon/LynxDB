@@ -1,0 +1,1 @@
+/bin/cc CMakeFiles/xsql.dir/src/client.c.o CMakeFiles/xsql.dir/src/common.c.o -o xsql 

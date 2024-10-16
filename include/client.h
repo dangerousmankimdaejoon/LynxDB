@@ -1,0 +1,5 @@
+#define SERVER_IP "127.0.0.1"
+#define SERVER_PORT 5031
+
+#define COMMAND_SIZE 8192
+#define RESULT_SIZE 8192

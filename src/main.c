@@ -6,12 +6,11 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <sys/prctl.h>
 #include <sys/stat.h>
 #include <time.h>
 
-#define LOG_DIR "log"
-#define PORT 5031
-#define BLOCK_SIZE 8192
+#include "../include/main.h"
 
 /*
  * create_log_directory - logging function
@@ -45,8 +44,6 @@ FILE* open_log_file() {
 
     create_log_directory(log_dir);
 
-    printf("log dir : %s\n", log_dir);
-
     char date[16];
 
     time_t now = time(NULL);
@@ -65,13 +62,13 @@ FILE* open_log_file() {
 }
 
 /*
- * log_message - logging function
+ * lx_log - logging function
  * @level: log level
  * @format: log format
  * 
  * logging message
  */
-void log_message(const char *level, const char *format, ...) {
+void lx_log(const char *level, const char *format, ...) {
     FILE *log_file = open_log_file();
 
     time_t now = time(NULL);
@@ -89,51 +86,124 @@ void log_message(const char *level, const char *format, ...) {
     fclose(log_file);
 }
 
-void handle_client(int client_sock) {
-    char command[BLOCK_SIZE];
-    char buffer[BLOCK_SIZE];
+/*
+ * lx_info - logging function
+ * @format: log format
+ * 
+ * logging message (INFO)
+ */
+void lx_info(const char *format, ...) {
+    va_list args;
+    va_start(args, format);
+    
+    lx_log("INFO", format, args);
 
-    recv(client_sock, command, sizeof(command), 0);
-    log_message("INFO", "Received command:");
-
-    if (strncmp(command, "write", 5) == 0) {
-        FILE* file = fopen("daemon_datafile.db", "wb");
-        if (file == NULL) {
-            perror("Error opening file");
-            exit(1);
-        }
-
-        strcpy(buffer, "Data written by daemon.\n");
-        fwrite(buffer, sizeof(char), strlen(buffer), file);
-        fclose(file);
-        
-        send(client_sock, "Write complete", strlen("Write complete"), 0);
-    } 
-    else if (strncmp(command, "read", 4) == 0) {
-        FILE* file = fopen("daemon_datafile.db", "rb");
-        if (file == NULL) {
-            perror("Error opening file");
-            exit(1);
-        }
-
-        fread(buffer, sizeof(char), BLOCK_SIZE, file);
-        fclose(file);
-
-        send(client_sock, buffer, strlen(buffer), 0);
-    }
-
-    close(client_sock);
+    va_end(args);
 }
 
-int main() {
+/*
+ * create_lx_db_session - create process pool
+ * @server_sock: server socket file descriptor
+ * @*argv[]: arguments array
+ * 
+ * Change the name of the session process
+ */
+void create_lx_db_session(int server_sock, char *argv[]) {
+    for (int i = 0; i < PROCESS_POOL_SIZE; i++) {
+        pid_t pid = fork();
+
+        if (pid == -1) {
+            perror("fork failed");
+            exit(EXIT_FAILURE);
+        }
+        if (pid == 0) {
+            // Change the name of the session process
+            char session_nm[50];
+            snprintf(session_nm, sizeof(session_nm), "lynx_ses_%03d", i);
+            
+            strncpy(argv[0], session_nm, strlen(session_nm));
+            argv[0][strlen(session_nm)] = '\0';
+            prctl(PR_SET_NAME, session_nm, 0, 0, 0);
+
+            while (1) {
+                int client_sock;
+                struct sockaddr_in client_addr;
+                socklen_t client_len = sizeof(client_addr);
+
+                client_sock = accept(server_sock, (struct sockaddr *)&client_addr, &client_len);
+                if (client_sock < 0) {
+                    perror("accept failed");
+                    exit(EXIT_FAILURE);
+                }
+
+                handle_client(client_sock);
+            }
+            exit(0);
+        }
+    }
+}
+
+/*
+ * handle_client - client handler
+ * @client_sock: client socket file descriptor
+ * 
+ * test client handler
+ */
+void handle_client(int client_sock) {
+    char query_command[COMMAND_SIZE];
+    char query_result[RESULT_SIZE];
+
+    while(1) {
+        recv(client_sock, query_command, sizeof(query_command), 0);
+        
+        lx_log("INFO", "Received command : %s", query_command);
+
+        if(strncmp(query_command, "insert", 6) == 0) {
+
+            FILE* file = fopen("/home/seer/lynx/build/test.db", "a");
+
+            if (file == NULL) {
+                lx_log("ERROR", "Error opening file");
+                exit(1);
+            }
+
+            fprintf(file, substring(query_command, 7, -1));
+            fclose(file);
+
+            send(client_sock, "Insert complete", strlen("Insert complete"), 0);
+        }
+        else if(strncmp(query_command, "select", 6) == 0) {
+            FILE* file = fopen("/home/seer/lynx/build/test.db", "r");
+
+            if (file == NULL) {
+                perror("Error opening file");
+                exit(1);
+            }
+
+            while (fgets(query_result, RESULT_SIZE, file) != NULL) {
+                send(client_sock, query_result, strlen(query_result), 0);
+            }
+
+            fclose(file);
+        }
+        else if(strncmp(query_command, "quit", 6) == 0 || strncmp(query_command, "exit", 6) == 0) {
+            
+        }
+        else {
+            printf("command error");
+            send(client_sock, "command error", strlen("command error"), 0);
+        }
+    }
+}
+
+int main(int argc, char *argv[]) {
     
-    printf("start\n");
+    printf("start lynxDB\n");
 
     pid_t pid;
+
     pid = fork();
-    
-    printf("pid : %d\n", pid);
-    
+
     if (pid < 0) {
         exit(EXIT_FAILURE);
     }
@@ -148,14 +218,22 @@ int main() {
     umask(0);
     chdir("/");
 
-    freopen("/home/seer/lynxdb/build/lynxdb_stdout.log", "a", stdout);
-    freopen("/home/seer/lynxdb/build/lynxdb_stderr.log", "a", stderr);
-    
     close(STDIN_FILENO);
     close(STDOUT_FILENO);
     close(STDERR_FILENO);
+
+    // Change the name of the primary process
+    const char *prm_process_nm = "lynx_prm";
     
-    log_message("INFO", "[Starting lynx]");
+    strncpy(argv[0], prm_process_nm, strlen(prm_process_nm));
+
+    argv[0][strlen(prm_process_nm)] = '\0';
+
+    prctl(PR_SET_NAME, prm_process_nm, 0, 0, 0);
+
+    lx_log("INFO", "*******************");
+    lx_log("INFO", "   Starting lynx   ");
+    lx_log("INFO", "*******************");
 
     int server_sock, client_sock;
     struct sockaddr_in server_addr, client_addr;
@@ -163,15 +241,15 @@ int main() {
     int opt = 1;
 
     server_sock = socket(AF_INET, SOCK_STREAM, 0);
-    log_message("INFO", "server_sock : %d", server_sock);
+    lx_log("INFO", "server_sock : %d", server_sock);
 
     if (server_sock == -1) {
-        log_message("ERROR", "Socket failed");
+        lx_log("ERROR", "Socket failed");
         exit(EXIT_FAILURE);
     }
 
     if (setsockopt(server_sock, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt))) {
-        log_message("ERROR", "setsockopt");
+        lx_log("ERROR", "setsockopt");
         exit(EXIT_FAILURE);
     }
 
@@ -180,38 +258,22 @@ int main() {
     server_addr.sin_port = htons(PORT);
 
     if (bind(server_sock, (struct sockaddr*)&server_addr, sizeof(server_addr)) < 0) {
-        log_message("ERROR", "Bind failed");
+        lx_log("ERROR", "Bind failed");
         close(server_sock);
         exit(EXIT_FAILURE);
     }
 
     if (listen(server_sock, 3) < 0) {
-        log_message("ERROR", "Listen failed");
+        lx_log("ERROR", "Listen failed");
         exit(EXIT_FAILURE);
     }
 
-    while (1) {
-        client_sock = accept(server_sock, (struct sockaddr*)&client_addr, &addr_len);
-        if (client_sock == -1) {
-            log_message("ERROR", "Accept failed");
-            exit(EXIT_FAILURE);
-        }
+    // create process pool
+    create_lx_db_session(server_sock, argv);
 
-        pid = fork();
-            
-        if (pid == -1) {
-            log_message("ERROR", "Fork failed");
-            close(client_sock);
-            continue;
-        }
-        
-        if (pid == 0) {
-            close(server_sock);
-            handle_client(client_sock);
-        } else {
-            close(client_sock);
-            waitpid(-1, NULL, WNOHANG);
-        }
+    while (1) {
+        sleep(10);
+        lx_info("Daemon is running");
     }
 
     close(server_sock);

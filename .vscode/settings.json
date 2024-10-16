@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.pc": "c",
+        "string.h": "c",
+        "time.h": "c"
+    }
+}
