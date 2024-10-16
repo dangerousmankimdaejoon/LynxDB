@@ -5,12 +5,12 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 
-#define PORT 5031
+#define SERVER_PORT 5031
 #define BLOCK_SIZE 8192
 
 int main() {
     int sock = 0;
-    struct sockaddr_in serv_addr;
+    struct sockaddr_in server_addr;
     char buffer[BLOCK_SIZE] = {0};
 
     sock = socket(AF_INET, SOCK_STREAM, 0);
@@ -19,17 +19,14 @@ int main() {
         return -1;
     }
 
-    serv_addr.sin_family = AF_INET;
-    serv_addr.sin_port = htons(PORT);
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_port = htons(SERVER_PORT);
+    server_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
 
-    if (inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr) <= 0) {
-        printf("\nInvalid address/ Address not supported \n");
-        return -1;
-    }
-
-    if (connect(sock, (struct sockaddr*)&serv_addr, sizeof(serv_addr)) < 0) {
-        printf("\nConnection Failed \n");
-        return -1;
+    if (connect(sock, (struct sockaddr*)&server_addr, sizeof(server_addr)) < 0) {
+        perror("Connection to the server failed");
+        close(sock);
+        exit(EXIT_FAILURE);
     }
 
     char* command = "write";

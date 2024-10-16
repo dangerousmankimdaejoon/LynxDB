@@ -102,18 +102,29 @@ void lx_info(const char *format, ...) {
 }
 
 /*
- * create_worker_processes - create process pool
+ * create_db_session - create process pool
+ * @server_sock: server socket file descriptor
+ * @*argv[]: arguments array
  * 
- * 
+ * Change the name of the session process
  */
-void create_worker_processes(int server_sock) {
+void create_db_session(int server_sock, char *argv[]) {
     for (int i = 0; i < PROCESS_POOL_SIZE; i++) {
         pid_t pid = fork();
+
         if (pid == -1) {
             perror("fork failed");
             exit(EXIT_FAILURE);
         }
         if (pid == 0) {
+            // Change the name of the session process
+            char session_nm[50];
+            snprintf(session_nm, sizeof(session_nm), "lynx_ses_%03d", i);
+            
+            strncpy(argv[0], session_nm, strlen(session_nm));
+            argv[0][strlen(session_nm)] = '\0';
+            prctl(PR_SET_NAME, session_nm, 0, 0, 0);
+
             while (1) {
                 int client_sock;
                 struct sockaddr_in client_addr;
@@ -194,10 +205,15 @@ int main(int argc, char *argv[]) {
     close(STDOUT_FILENO);
     close(STDERR_FILENO);
 
-    strncpy(argv[0], "prm_lynx", strlen(argv[0]));
-
-    lx_info("arvg[0] : %s", argv[0]);
+    // Change the name of the primary process
+    const char *prm_process_nm = "lynx_prm";
     
+    strncpy(argv[0], prm_process_nm, strlen(prm_process_nm));
+
+    argv[0][strlen(prm_process_nm)] = '\0';
+
+    prctl(PR_SET_NAME, prm_process_nm, 0, 0, 0);
+
     lx_log("INFO", "*******************");
     lx_log("INFO", "   Starting lynx   ");
     lx_log("INFO", "*******************");
@@ -236,7 +252,12 @@ int main(int argc, char *argv[]) {
     }
 
     // create process pool
-    create_worker_processes(server_sock);
+    create_db_session(server_sock, argv);
+
+    while (1) {
+        sleep(10);
+        lx_info("Daemon is running");
+    }
 
     close(server_sock);
     return 0;
