@@ -6,26 +6,17 @@
 #include <arpa/inet.h>
 #include <time.h>
 
-<<<<<<< HEAD
 #include "../include/client.h"
-=======
-#define SERVER_PORT 5031
-#define BLOCK_SIZE 8192
->>>>>>> ddd2b897fd389935dc4b026d87101d04b9c3c7a3
 
 int main() {
     int sock = 0;
     struct sockaddr_in server_addr;
-<<<<<<< HEAD
     
     char query_command[COMMAND_SIZE] = {0};
     char query_result[RESULT_SIZE] = {0};
     
     time_t timer = time(NULL);
     struct tm *t = localtime(&timer);
-=======
-    char buffer[BLOCK_SIZE] = {0};
->>>>>>> ddd2b897fd389935dc4b026d87101d04b9c3c7a3
 
     sock = socket(AF_INET, SOCK_STREAM, 0);
     if (sock < 0) {
@@ -35,7 +26,6 @@ int main() {
 
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(SERVER_PORT);
-<<<<<<< HEAD
 
     if (inet_pton(AF_INET, SERVER_IP, &server_addr.sin_addr) <= 0) {
         perror("Invalid address or Address not supported");
@@ -43,10 +33,6 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
-=======
-    server_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
-
->>>>>>> ddd2b897fd389935dc4b026d87101d04b9c3c7a3
     if (connect(sock, (struct sockaddr*)&server_addr, sizeof(server_addr)) < 0) {
         perror("Connection to the server failed");
         close(sock);

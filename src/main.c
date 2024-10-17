@@ -10,15 +10,7 @@
 #include <sys/stat.h>
 #include <time.h>
 
-<<<<<<< HEAD
 #include "../include/main.h"
-=======
-#define LOG_DIR "log"
-#define PORT 5031
-
-#define BLOCK_SIZE 8192
-#define PROCESS_POOL_SIZE 2
->>>>>>> ddd2b897fd389935dc4b026d87101d04b9c3c7a3
 
 /*
  * create_log_directory - logging function
@@ -94,15 +86,12 @@ void lx_log(const char *level, const char *format, ...) {
     fclose(log_file);
 }
 
-<<<<<<< HEAD
 /*
  * lx_info - logging function
  * @format: log format
  * 
  * logging message (INFO)
  */
-=======
->>>>>>> ddd2b897fd389935dc4b026d87101d04b9c3c7a3
 void lx_info(const char *format, ...) {
     va_list args;
     va_start(args, format);
@@ -111,7 +100,6 @@ void lx_info(const char *format, ...) {
 
     va_end(args);
 }
-<<<<<<< HEAD
 
 /*
  * create_lx_db_session - create process pool
@@ -123,57 +111,6 @@ void lx_info(const char *format, ...) {
 void create_lx_db_session(int server_sock, char *argv[]) {
     for (int i = 0; i < PROCESS_POOL_SIZE; i++) {
         pid_t pid = fork();
-=======
-
-/*
- * create_db_session - create process pool
- * @server_sock: server socket file descriptor
- * @*argv[]: arguments array
- * 
- * Change the name of the session process
- */
-void create_db_session(int server_sock, char *argv[]) {
-    for (int i = 0; i < PROCESS_POOL_SIZE; i++) {
-        pid_t pid = fork();
-
-        if (pid == -1) {
-            perror("fork failed");
-            exit(EXIT_FAILURE);
-        }
-        if (pid == 0) {
-            // Change the name of the session process
-            char session_nm[50];
-            snprintf(session_nm, sizeof(session_nm), "lynx_ses_%03d", i);
-            
-            strncpy(argv[0], session_nm, strlen(session_nm));
-            argv[0][strlen(session_nm)] = '\0';
-            prctl(PR_SET_NAME, session_nm, 0, 0, 0);
-
-            while (1) {
-                int client_sock;
-                struct sockaddr_in client_addr;
-                socklen_t client_len = sizeof(client_addr);
-
-                client_sock = accept(server_sock, (struct sockaddr *)&client_addr, &client_len);
-                if (client_sock < 0) {
-                    perror("accept failed");
-                    exit(EXIT_FAILURE);
-                }
-
-                handle_client(client_sock);
-            }
-            exit(0);
-        }
-    }
-}
-
-void handle_client(int client_sock) {
-    char command[BLOCK_SIZE];
-    char buffer[BLOCK_SIZE];
-
-    recv(client_sock, command, sizeof(command), 0);
-    lx_log("INFO", "Received command:");
->>>>>>> ddd2b897fd389935dc4b026d87101d04b9c3c7a3
 
         if (pid == -1) {
             perror("fork failed");
@@ -332,11 +269,7 @@ int main(int argc, char *argv[]) {
     }
 
     // create process pool
-<<<<<<< HEAD
     create_lx_db_session(server_sock, argv);
-=======
-    create_db_session(server_sock, argv);
->>>>>>> ddd2b897fd389935dc4b026d87101d04b9c3c7a3
 
     while (1) {
         sleep(10);
