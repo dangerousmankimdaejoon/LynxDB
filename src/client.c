@@ -8,6 +8,8 @@
 
 #include "../include/client.h"
 
+#define TEST 5031
+
 int main() {
     int sock = 0;
     struct sockaddr_in server_addr;

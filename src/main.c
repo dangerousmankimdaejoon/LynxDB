@@ -12,6 +12,8 @@
 
 #include "../include/main.h"
 
+#define TEST 5031
+
 /*
  * create_log_directory - logging function
  * @log_dir: $SD_HOME/log
