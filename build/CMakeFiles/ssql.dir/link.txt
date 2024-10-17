@@ -1,0 +1,1 @@
+/bin/cc CMakeFiles/ssql.dir/src/client.c.o -o ssql 

@@ -1,0 +1,1 @@
+/bin/cc CMakeFiles/nsql.dir/src/client.c.o -o nsql 

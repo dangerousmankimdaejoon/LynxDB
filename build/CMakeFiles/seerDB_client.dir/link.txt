@@ -1,0 +1,1 @@
+/bin/cc CMakeFiles/seerDB_client.dir/src/client.c.o -o seerDB_client 
