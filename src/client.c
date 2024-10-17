@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <signal.h>
 #include <unistd.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
@@ -8,8 +9,14 @@
 
 #include "../include/client.h"
 
+int sock;
+
+void handle_sigint(int sig) {
+    close(sock);
+    exit(0);
+}
+
 int main() {
-    int sock = 0;
     struct sockaddr_in server_addr;
     
     char query_command[COMMAND_SIZE] = {0};
@@ -54,10 +61,17 @@ int main() {
         // Send a command to the server
         send(sock, query_command, strlen(query_command), 0);
 
+        // response from server
         int bytes_received = recv(sock, query_result, sizeof(query_result), 0);
         if (bytes_received > 0) {
             query_result[bytes_received] = '\0';
             printf("%s\n", query_result);
+
+            if(strncmp(query_result, "exit", sizeof("exit")) == 0) {
+                exit(1);
+            }
+            // initialize the received RESULT variable
+            memset(query_result, 0, sizeof(query_command));
         } else {
             printf("No response from server.\n");
         }

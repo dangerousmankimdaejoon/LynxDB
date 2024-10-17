@@ -1,1 +1,1 @@
-/bin/cc CMakeFiles/lynx.dir/src/main.c.o CMakeFiles/lynx.dir/src/common.c.o -o lynx 
+/bin/cc CMakeFiles/lynx.dir/src/parser/parser_standard.c.o CMakeFiles/lynx.dir/src/main.c.o CMakeFiles/lynx.dir/src/common.c.o -o lynx 

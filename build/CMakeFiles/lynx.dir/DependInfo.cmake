@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/seer/lynx/src/common.c" "CMakeFiles/lynx.dir/src/common.c.o" "gcc" "CMakeFiles/lynx.dir/src/common.c.o.d"
   "/home/seer/lynx/src/main.c" "CMakeFiles/lynx.dir/src/main.c.o" "gcc" "CMakeFiles/lynx.dir/src/main.c.o.d"
+  "/home/seer/lynx/src/parser/parser_standard.c" "CMakeFiles/lynx.dir/src/parser/parser_standard.c.o" "gcc" "CMakeFiles/lynx.dir/src/parser/parser_standard.c.o.d"
   )
 
 # Targets to which this target links.

@@ -32,5 +32,8 @@ CMakeFiles/lynx.dir/src/main.c.o: /home/seer/lynx/src/main.c \
  /usr/include/asm-generic/bitsperlong.h /usr/include/linux/posix_types.h \
  /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \
  /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \
- /usr/include/sys/stat.h /usr/include/bits/stat.h \
+ /usr/include/sys/stat.h /usr/include/bits/stat.h /usr/include/errno.h \
+ /usr/include/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
+ /usr/include/asm-generic/errno-base.h \
  /home/seer/lynx/src/../include/main.h

@@ -217,6 +217,30 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lynx.dir/build.make CMakeFiles/lynx.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/parser/parser_standard.o: src/parser/parser_standard.c.o
+.PHONY : src/parser/parser_standard.o
+
+# target to build an object file
+src/parser/parser_standard.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lynx.dir/build.make CMakeFiles/lynx.dir/src/parser/parser_standard.c.o
+.PHONY : src/parser/parser_standard.c.o
+
+src/parser/parser_standard.i: src/parser/parser_standard.c.i
+.PHONY : src/parser/parser_standard.i
+
+# target to preprocess a source file
+src/parser/parser_standard.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lynx.dir/build.make CMakeFiles/lynx.dir/src/parser/parser_standard.c.i
+.PHONY : src/parser/parser_standard.c.i
+
+src/parser/parser_standard.s: src/parser/parser_standard.c.s
+.PHONY : src/parser/parser_standard.s
+
+# target to generate assembly for a file
+src/parser/parser_standard.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lynx.dir/build.make CMakeFiles/lynx.dir/src/parser/parser_standard.c.s
+.PHONY : src/parser/parser_standard.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -236,6 +260,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/parser/parser_standard.o"
+	@echo "... src/parser/parser_standard.i"
+	@echo "... src/parser/parser_standard.s"
 .PHONY : help
 
 

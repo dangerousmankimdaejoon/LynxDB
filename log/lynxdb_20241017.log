@@ -1,0 +1,546 @@
+[2024-10-17 08:54:26] INFO: *******************
+[2024-10-17 08:54:26] INFO:    Starting lynx   
+[2024-10-17 08:54:26] INFO: *******************
+[2024-10-17 08:54:26] INFO: server_sock : 0
+[2024-10-17 08:54:29] INFO: Received command : insert 1234
+[2024-10-17 08:54:36] INFO: Daemon is running
+[2024-10-17 08:54:43] INFO: Received command : insert jjj
+[2024-10-17 08:54:46] INFO: Daemon is running
+[2024-10-17 08:54:51] INFO: Received command : insert 0000
+[2024-10-17 08:54:54] INFO: Client 1 disconnected
+[2024-10-17 08:54:54] INFO: Received command : 
+[2024-10-17 08:54:54] INFO: Client 1 disconnected
+[2024-10-17 08:54:54] INFO: Received command : 
+[2024-10-17 08:54:56] INFO: Daemon is running
+[2024-10-17 08:55:06] INFO: Daemon is running
+[2024-10-17 08:55:16] INFO: Daemon is running
+[2024-10-17 08:55:26] INFO: Daemon is running
+[2024-10-17 08:55:36] INFO: Daemon is running
+[2024-10-17 08:55:46] INFO: Daemon is running
+[2024-10-17 08:55:56] INFO: Daemon is running
+[2024-10-17 08:56:06] INFO: Daemon is running
+[2024-10-17 08:56:16] INFO: Daemon is running
+[2024-10-17 08:56:26] INFO: Daemon is running
+[2024-10-17 08:56:36] INFO: Daemon is running
+[2024-10-17 08:56:46] INFO: Daemon is running
+[2024-10-17 08:56:56] INFO: Daemon is running
+[2024-10-17 08:57:06] INFO: Daemon is running
+[2024-10-17 08:57:16] INFO: Daemon is running
+[2024-10-17 08:57:26] INFO: Daemon is running
+[2024-10-17 08:57:36] INFO: Daemon is running
+[2024-10-17 08:57:46] INFO: Daemon is running
+[2024-10-17 08:57:56] INFO: Daemon is running
+[2024-10-17 08:58:06] INFO: Daemon is running
+[2024-10-17 08:58:16] INFO: Daemon is running
+[2024-10-17 08:58:26] INFO: Daemon is running
+[2024-10-17 08:58:36] INFO: Daemon is running
+[2024-10-17 08:58:46] INFO: Daemon is running
+[2024-10-17 08:58:56] INFO: Daemon is running
+[2024-10-17 08:59:06] INFO: Daemon is running
+[2024-10-17 08:59:16] INFO: Daemon is running
+[2024-10-17 08:59:26] INFO: Daemon is running
+[2024-10-17 08:59:36] INFO: Daemon is running
+[2024-10-17 08:59:46] INFO: Daemon is running
+[2024-10-17 08:59:56] INFO: Daemon is running
+[2024-10-17 09:00:06] INFO: Daemon is running
+[2024-10-17 09:00:16] INFO: Daemon is running
+[2024-10-17 09:00:26] INFO: Daemon is running
+[2024-10-17 09:00:36] INFO: Daemon is running
+[2024-10-17 09:00:46] INFO: Daemon is running
+[2024-10-17 09:00:56] INFO: Daemon is running
+[2024-10-17 09:01:06] INFO: Daemon is running
+[2024-10-17 09:01:16] INFO: Daemon is running
+[2024-10-17 09:01:26] INFO: Daemon is running
+[2024-10-17 09:01:36] INFO: Daemon is running
+[2024-10-17 09:01:46] INFO: Daemon is running
+[2024-10-17 09:01:56] INFO: Daemon is running
+[2024-10-17 09:02:06] INFO: Daemon is running
+[2024-10-17 09:02:16] INFO: Daemon is running
+[2024-10-17 09:02:26] INFO: Daemon is running
+[2024-10-17 09:02:36] INFO: Daemon is running
+[2024-10-17 09:02:46] INFO: Daemon is running
+[2024-10-17 09:02:56] INFO: Daemon is running
+[2024-10-17 09:03:06] INFO: Daemon is running
+[2024-10-17 09:03:16] INFO: Daemon is running
+[2024-10-17 09:03:26] INFO: Daemon is running
+[2024-10-17 09:03:31] INFO: *******************
+[2024-10-17 09:03:31] INFO:    Starting lynx   
+[2024-10-17 09:03:31] INFO: *******************
+[2024-10-17 09:03:31] INFO: server_sock : 0
+[2024-10-17 09:03:36] INFO: Received command : insert 12345
+[2024-10-17 09:03:37] INFO: Received command : insert 123
+[2024-10-17 09:03:38] INFO: Client 1 disconnected
+[2024-10-17 09:03:38] INFO: Received command : 
+[2024-10-17 09:03:38] INFO: Client 1 disconnected
+[2024-10-17 09:03:38] INFO: Received command : 
+[2024-10-17 09:03:41] INFO: Daemon is running
+[2024-10-17 09:03:51] INFO: Daemon is running
+[2024-10-17 09:04:01] INFO: Daemon is running
+[2024-10-17 09:04:19] INFO: *******************
+[2024-10-17 09:04:19] INFO:    Starting lynx   
+[2024-10-17 09:04:19] INFO: *******************
+[2024-10-17 09:04:19] INFO: server_sock : 0
+[2024-10-17 09:04:21] INFO: Received command : insert 123
+[2024-10-17 09:04:25] INFO: Received command : insert 1
+[2024-10-17 09:04:26] INFO: Client 1 disconnected
+[2024-10-17 09:04:26] INFO: Received command : 
+[2024-10-17 09:04:26] INFO: Client 1 disconnected
+[2024-10-17 09:04:26] INFO: Received command : 
+[2024-10-17 09:04:29] INFO: Daemon is running
+[2024-10-17 09:04:39] INFO: Daemon is running
+[2024-10-17 09:04:49] INFO: Daemon is running
+[2024-10-17 09:04:59] INFO: Daemon is running
+[2024-10-17 09:05:09] INFO: Daemon is running
+[2024-10-17 09:05:19] INFO: Daemon is running
+[2024-10-17 09:05:29] INFO: Daemon is running
+[2024-10-17 09:05:39] INFO: Daemon is running
+[2024-10-17 09:05:49] INFO: Daemon is running
+[2024-10-17 09:05:59] INFO: Daemon is running
+[2024-10-17 09:06:09] INFO: Daemon is running
+[2024-10-17 09:06:21] INFO: *******************
+[2024-10-17 09:06:21] INFO:    Starting lynx   
+[2024-10-17 09:06:21] INFO: *******************
+[2024-10-17 09:06:21] INFO: server_sock : 0
+[2024-10-17 09:06:23] INFO: Received command : insert 1
+[2024-10-17 09:06:24] INFO: Received command : insert 1231
+[2024-10-17 09:06:25] INFO: Received command : inser v
+[2024-10-17 09:06:27] INFO: Received command : insert v
+[2024-10-17 09:06:29] INFO: Client 1 disconnected
+[2024-10-17 09:06:31] INFO: Daemon is running
+[2024-10-17 09:06:41] INFO: Daemon is running
+[2024-10-17 09:06:51] INFO: Daemon is running
+[2024-10-17 09:07:01] INFO: *******************
+[2024-10-17 09:07:01] INFO:    Starting lynx   
+[2024-10-17 09:07:01] INFO: *******************
+[2024-10-17 09:07:01] INFO: server_sock : 0
+[2024-10-17 09:07:06] INFO: Received command : insert 1
+[2024-10-17 09:07:07] INFO: Received command : insert 44
+[2024-10-17 09:07:10] INFO: Received command : insert 7777777
+[2024-10-17 09:07:11] INFO: Daemon is running
+[2024-10-17 09:07:13] INFO: Received command : isnert vv
+[2024-10-17 09:07:15] INFO: Received command : insert vv
+[2024-10-17 09:07:16] INFO: Client 1 disconnected
+[2024-10-17 09:07:21] INFO: Daemon is running
+[2024-10-17 09:07:31] INFO: Daemon is running
+[2024-10-17 09:07:41] INFO: Daemon is running
+[2024-10-17 09:07:51] INFO: Daemon is running
+[2024-10-17 09:08:01] INFO: Daemon is running
+[2024-10-17 09:08:01] INFO: Received command : insert 11
+[2024-10-17 09:08:02] INFO: Received command : 11
+[2024-10-17 09:08:05] INFO: Received command : insert bb
+[2024-10-17 09:08:11] INFO: Daemon is running
+[2024-10-17 09:08:21] INFO: Daemon is running
+[2024-10-17 09:08:24] INFO: Client 1 disconnected
+[2024-10-17 09:08:31] INFO: Daemon is running
+[2024-10-17 09:08:41] INFO: Daemon is running
+[2024-10-17 09:08:51] INFO: Daemon is running
+[2024-10-17 09:09:01] INFO: Daemon is running
+[2024-10-17 09:09:11] INFO: Daemon is running
+[2024-10-17 09:09:16] INFO: *******************
+[2024-10-17 09:09:16] INFO:    Starting lynx   
+[2024-10-17 09:09:16] INFO: *******************
+[2024-10-17 09:09:16] INFO: server_sock : 0
+[2024-10-17 09:09:16] ERROR: Bind failed
+[2024-10-17 09:09:21] INFO: Received command : insert 123
+[2024-10-17 09:09:21] INFO: Daemon is running
+[2024-10-17 09:09:22] INFO: Received command : insert 111
+[2024-10-17 09:09:29] INFO: Client 2 disconnected
+[2024-10-17 09:09:31] INFO: Daemon is running
+[2024-10-17 09:09:45] INFO: *******************
+[2024-10-17 09:09:45] INFO:    Starting lynx   
+[2024-10-17 09:09:45] INFO: *******************
+[2024-10-17 09:09:45] INFO: server_sock : 0
+[2024-10-17 09:09:50] INFO: Received command : insert 123
+[2024-10-17 09:09:51] INFO: Received command : insert x
+[2024-10-17 09:09:52] INFO: Received command : insert v
+[2024-10-17 09:09:54] INFO: Received command : insert vv
+[2024-10-17 09:09:55] INFO: Daemon is running
+[2024-10-17 09:09:59] INFO: Client 1 disconnected
+[2024-10-17 09:10:05] INFO: Daemon is running
+[2024-10-17 09:10:08] INFO: Received command : ll
+[2024-10-17 09:10:10] INFO: Received command : ll
+[2024-10-17 09:10:10] INFO: Received command : 123
+[2024-10-17 09:10:11] INFO: Received command : ll3
+[2024-10-17 09:10:12] INFO: Received command : ll3
+[2024-10-17 09:10:15] INFO: Daemon is running
+[2024-10-17 09:10:17] INFO: Received command : exit
+[2024-10-17 09:10:25] INFO: Daemon is running
+[2024-10-17 09:10:35] INFO: Daemon is running
+[2024-10-17 09:10:45] INFO: Daemon is running
+[2024-10-17 09:10:55] INFO: Daemon is running
+[2024-10-17 09:11:05] INFO: Daemon is running
+[2024-10-17 09:11:15] INFO: Daemon is running
+[2024-10-17 09:11:25] INFO: Daemon is running
+[2024-10-17 09:11:35] INFO: Daemon is running
+[2024-10-17 09:11:45] INFO: Daemon is running
+[2024-10-17 09:11:55] INFO: Daemon is running
+[2024-10-17 09:12:05] INFO: Daemon is running
+[2024-10-17 09:12:15] INFO: Daemon is running
+[2024-10-17 09:12:25] INFO: Daemon is running
+[2024-10-17 09:12:35] INFO: Daemon is running
+[2024-10-17 09:12:45] INFO: Daemon is running
+[2024-10-17 09:12:55] INFO: Daemon is running
+[2024-10-17 09:13:05] INFO: Daemon is running
+[2024-10-17 09:13:15] INFO: Daemon is running
+[2024-10-17 09:13:25] INFO: Daemon is running
+[2024-10-17 09:13:35] INFO: Daemon is running
+[2024-10-17 09:13:45] INFO: Daemon is running
+[2024-10-17 09:13:55] INFO: Daemon is running
+[2024-10-17 09:14:05] INFO: Daemon is running
+[2024-10-17 09:14:15] INFO: Daemon is running
+[2024-10-17 09:14:25] INFO: Daemon is running
+[2024-10-17 09:14:35] INFO: Daemon is running
+[2024-10-17 09:14:45] INFO: Daemon is running
+[2024-10-17 09:14:54] INFO: *******************
+[2024-10-17 09:14:54] INFO:    Starting lynx   
+[2024-10-17 09:14:54] INFO: *******************
+[2024-10-17 09:14:54] INFO: server_sock : 0
+[2024-10-17 09:14:59] INFO: Received command : insert 123
+[2024-10-17 09:14:59] INFO: Client 1 disconnected
+[2024-10-17 09:15:04] INFO: Daemon is running
+[2024-10-17 09:15:14] INFO: Daemon is running
+[2024-10-17 09:15:24] INFO: Daemon is running
+[2024-10-17 09:15:34] INFO: Daemon is running
+[2024-10-17 09:15:44] INFO: Daemon is running
+[2024-10-17 09:15:54] INFO: Daemon is running
+[2024-10-17 09:16:04] INFO: Daemon is running
+[2024-10-17 09:16:14] INFO: Daemon is running
+[2024-10-17 09:16:24] INFO: Daemon is running
+[2024-10-17 09:16:34] INFO: Daemon is running
+[2024-10-17 09:16:44] INFO: Daemon is running
+[2024-10-17 09:16:54] INFO: Daemon is running
+[2024-10-17 09:17:04] INFO: Daemon is running
+[2024-10-17 09:17:09] INFO: *******************
+[2024-10-17 09:17:09] INFO:    Starting lynx   
+[2024-10-17 09:17:09] INFO: *******************
+[2024-10-17 09:17:09] INFO: server_sock : 0
+[2024-10-17 09:17:14] INFO: Received command : insert 123
+[2024-10-17 09:17:14] INFO: Client 1 disconnected
+[2024-10-17 09:17:19] INFO: Daemon is running
+[2024-10-17 09:17:31] INFO: *******************
+[2024-10-17 09:17:31] INFO:    Starting lynx   
+[2024-10-17 09:17:31] INFO: *******************
+[2024-10-17 09:17:31] INFO: server_sock : 0
+[2024-10-17 09:17:36] INFO: Received command : insert 123
+[2024-10-17 09:17:38] INFO: Received command : insert 123
+[2024-10-17 09:17:39] INFO: Client 1 disconnected
+[2024-10-17 09:17:41] INFO: Daemon is running
+[2024-10-17 09:17:51] INFO: Daemon is running
+[2024-10-17 09:18:01] INFO: Daemon is running
+[2024-10-17 09:18:11] INFO: Daemon is running
+[2024-10-17 09:18:21] INFO: Daemon is running
+[2024-10-17 09:18:31] INFO: Daemon is running
+[2024-10-17 09:18:41] INFO: Daemon is running
+[2024-10-17 09:18:51] INFO: Daemon is running
+[2024-10-17 09:19:01] INFO: Daemon is running
+[2024-10-17 09:19:11] INFO: Daemon is running
+[2024-10-17 09:19:21] INFO: Daemon is running
+[2024-10-17 09:19:31] INFO: Daemon is running
+[2024-10-17 09:19:41] INFO: Daemon is running
+[2024-10-17 09:19:50] INFO: *******************
+[2024-10-17 09:19:50] INFO:    Starting lynx   
+[2024-10-17 09:19:50] INFO: *******************
+[2024-10-17 09:19:50] INFO: server_sock : 0
+[2024-10-17 09:19:52] INFO: Received command : insert 123
+[2024-10-17 09:19:54] INFO: Received command : insert 3123
+[2024-10-17 09:19:56] INFO: Received command : exit
+[2024-10-17 09:19:56] INFO: Client 1 disconnected
+[2024-10-17 09:20:00] INFO: Daemon is running
+[2024-10-17 09:20:10] INFO: Daemon is running
+[2024-10-17 09:20:20] INFO: Daemon is running
+[2024-10-17 09:20:30] INFO: Daemon is running
+[2024-10-17 09:20:40] INFO: Daemon is running
+[2024-10-17 09:20:50] INFO: Daemon is running
+[2024-10-17 09:21:00] INFO: Daemon is running
+[2024-10-17 09:21:10] INFO: Daemon is running
+[2024-10-17 09:21:20] INFO: Daemon is running
+[2024-10-17 09:21:30] INFO: Daemon is running
+[2024-10-17 09:21:40] INFO: Daemon is running
+[2024-10-17 09:21:50] INFO: Daemon is running
+[2024-10-17 09:22:00] INFO: Daemon is running
+[2024-10-17 09:22:10] INFO: Daemon is running
+[2024-10-17 09:22:20] INFO: Daemon is running
+[2024-10-17 09:22:30] INFO: Daemon is running
+[2024-10-17 09:22:40] INFO: Daemon is running
+[2024-10-17 09:22:50] INFO: Daemon is running
+[2024-10-17 09:23:00] INFO: Daemon is running
+[2024-10-17 09:23:00] INFO: Received command : insert 123
+[2024-10-17 09:23:02] INFO: Received command : insert 123
+[2024-10-17 09:23:09] INFO: Received command : isnert 123
+[2024-10-17 09:23:10] INFO: Daemon is running
+[2024-10-17 09:23:12] INFO: Received command : insert 123
+[2024-10-17 09:23:15] INFO: Received command : insert 123
+[2024-10-17 09:23:20] INFO: Daemon is running
+[2024-10-17 09:23:26] INFO: Client 2 disconnected
+[2024-10-17 09:23:26] INFO: Received command : insert 123
+[2024-10-17 09:23:30] INFO: Daemon is running
+[2024-10-17 09:23:40] INFO: Daemon is running
+[2024-10-17 09:23:50] INFO: Daemon is running
+[2024-10-17 09:24:00] INFO: Daemon is running
+[2024-10-17 09:24:10] INFO: Daemon is running
+[2024-10-17 09:24:20] INFO: Daemon is running
+[2024-10-17 09:24:30] INFO: Daemon is running
+[2024-10-17 09:24:40] INFO: Daemon is running
+[2024-10-17 09:24:50] INFO: Daemon is running
+[2024-10-17 09:25:00] INFO: Daemon is running
+[2024-10-17 09:25:10] INFO: Daemon is running
+[2024-10-17 09:25:20] INFO: Daemon is running
+[2024-10-17 09:25:30] INFO: Daemon is running
+[2024-10-17 09:25:40] INFO: Daemon is running
+[2024-10-17 09:25:50] INFO: Daemon is running
+[2024-10-17 09:26:00] INFO: Daemon is running
+[2024-10-17 09:26:10] INFO: Daemon is running
+[2024-10-17 09:26:20] INFO: Daemon is running
+[2024-10-17 09:26:30] INFO: Daemon is running
+[2024-10-17 09:26:40] INFO: Daemon is running
+[2024-10-17 09:26:50] INFO: Daemon is running
+[2024-10-17 09:27:00] INFO: Daemon is running
+[2024-10-17 09:27:10] INFO: Daemon is running
+[2024-10-17 09:27:20] INFO: Daemon is running
+[2024-10-17 09:27:30] INFO: Daemon is running
+[2024-10-17 09:27:40] INFO: Daemon is running
+[2024-10-17 09:27:50] INFO: Daemon is running
+[2024-10-17 09:28:00] INFO: Daemon is running
+[2024-10-17 09:28:10] INFO: Daemon is running
+[2024-10-17 09:28:20] INFO: Daemon is running
+[2024-10-17 09:28:30] INFO: Daemon is running
+[2024-10-17 09:28:40] INFO: Daemon is running
+[2024-10-17 09:28:50] INFO: Daemon is running
+[2024-10-17 09:29:00] INFO: Daemon is running
+[2024-10-17 09:29:10] INFO: Daemon is running
+[2024-10-17 09:29:20] INFO: Daemon is running
+[2024-10-17 09:29:30] INFO: Daemon is running
+[2024-10-17 09:29:40] INFO: Daemon is running
+[2024-10-17 09:29:50] INFO: Daemon is running
+[2024-10-17 09:30:00] INFO: Daemon is running
+[2024-10-17 09:30:10] INFO: Daemon is running
+[2024-10-17 09:30:20] INFO: Daemon is running
+[2024-10-17 09:30:30] INFO: Daemon is running
+[2024-10-17 09:30:40] INFO: Daemon is running
+[2024-10-17 09:30:50] INFO: Daemon is running
+[2024-10-17 09:31:00] INFO: Daemon is running
+[2024-10-17 09:31:10] INFO: Daemon is running
+[2024-10-17 09:31:20] INFO: Daemon is running
+[2024-10-17 09:31:30] INFO: Daemon is running
+[2024-10-17 09:31:40] INFO: Daemon is running
+[2024-10-17 09:31:50] INFO: Daemon is running
+[2024-10-17 09:32:00] INFO: Daemon is running
+[2024-10-17 09:32:10] INFO: Daemon is running
+[2024-10-17 09:32:20] INFO: Daemon is running
+[2024-10-17 09:32:30] INFO: Daemon is running
+[2024-10-17 09:32:40] INFO: Daemon is running
+[2024-10-17 09:32:50] INFO: Daemon is running
+[2024-10-17 09:33:00] INFO: Daemon is running
+[2024-10-17 09:33:10] INFO: Daemon is running
+[2024-10-17 09:33:20] INFO: Daemon is running
+[2024-10-17 09:33:30] INFO: Daemon is running
+[2024-10-17 09:33:40] INFO: Daemon is running
+[2024-10-17 09:33:50] INFO: Daemon is running
+[2024-10-17 09:34:00] INFO: Daemon is running
+[2024-10-17 09:34:10] INFO: Daemon is running
+[2024-10-17 09:34:20] INFO: Daemon is running
+[2024-10-17 09:34:30] INFO: Daemon is running
+[2024-10-17 09:34:40] INFO: Daemon is running
+[2024-10-17 09:34:50] INFO: Daemon is running
+[2024-10-17 09:35:00] INFO: Daemon is running
+[2024-10-17 09:35:10] INFO: Daemon is running
+[2024-10-17 09:35:20] INFO: Daemon is running
+[2024-10-17 09:35:30] INFO: Daemon is running
+[2024-10-17 09:35:40] INFO: Daemon is running
+[2024-10-17 09:35:50] INFO: Daemon is running
+[2024-10-17 09:36:00] INFO: Daemon is running
+[2024-10-17 09:36:10] INFO: Daemon is running
+[2024-10-17 09:36:20] INFO: Daemon is running
+[2024-10-17 09:36:30] INFO: Daemon is running
+[2024-10-17 09:36:40] INFO: Daemon is running
+[2024-10-17 09:36:50] INFO: Daemon is running
+[2024-10-17 09:37:00] INFO: Daemon is running
+[2024-10-17 09:37:10] INFO: Daemon is running
+[2024-10-17 09:37:20] INFO: Daemon is running
+[2024-10-17 09:37:30] INFO: Daemon is running
+[2024-10-17 09:37:40] INFO: Daemon is running
+[2024-10-17 09:37:50] INFO: Daemon is running
+[2024-10-17 09:38:00] INFO: Daemon is running
+[2024-10-17 09:38:10] INFO: Daemon is running
+[2024-10-17 09:38:20] INFO: Daemon is running
+[2024-10-17 09:38:30] INFO: Daemon is running
+[2024-10-17 09:38:40] INFO: Daemon is running
+[2024-10-17 09:38:50] INFO: Daemon is running
+[2024-10-17 09:39:00] INFO: Daemon is running
+[2024-10-17 09:39:10] INFO: Daemon is running
+[2024-10-17 09:39:20] INFO: Daemon is running
+[2024-10-17 09:39:30] INFO: Daemon is running
+[2024-10-17 09:39:40] INFO: Daemon is running
+[2024-10-17 09:39:50] INFO: Daemon is running
+[2024-10-17 09:40:00] INFO: Daemon is running
+[2024-10-17 09:40:10] INFO: Daemon is running
+[2024-10-17 09:40:20] INFO: Daemon is running
+[2024-10-17 09:40:30] INFO: Daemon is running
+[2024-10-17 09:40:40] INFO: Daemon is running
+[2024-10-17 09:40:50] INFO: Daemon is running
+[2024-10-17 09:41:00] INFO: Daemon is running
+[2024-10-17 09:41:10] INFO: Daemon is running
+[2024-10-17 09:41:20] INFO: Daemon is running
+[2024-10-17 09:41:30] INFO: Daemon is running
+[2024-10-17 09:41:40] INFO: Daemon is running
+[2024-10-17 09:41:50] INFO: Daemon is running
+[2024-10-17 09:42:00] INFO: Daemon is running
+[2024-10-17 09:42:10] INFO: Daemon is running
+[2024-10-17 09:42:20] INFO: Daemon is running
+[2024-10-17 09:42:30] INFO: Daemon is running
+[2024-10-17 09:42:40] INFO: Daemon is running
+[2024-10-17 09:42:50] INFO: Daemon is running
+[2024-10-17 09:43:00] INFO: Daemon is running
+[2024-10-17 09:43:10] INFO: Daemon is running
+[2024-10-17 09:43:20] INFO: Daemon is running
+[2024-10-17 09:43:30] INFO: Daemon is running
+[2024-10-17 09:43:40] INFO: Daemon is running
+[2024-10-17 09:43:50] INFO: Daemon is running
+[2024-10-17 09:44:00] INFO: Daemon is running
+[2024-10-17 09:44:10] INFO: Daemon is running
+[2024-10-17 09:44:20] INFO: Daemon is running
+[2024-10-17 09:44:30] INFO: Daemon is running
+[2024-10-17 09:44:40] INFO: Daemon is running
+[2024-10-17 09:44:50] INFO: Daemon is running
+[2024-10-17 09:45:00] INFO: Daemon is running
+[2024-10-17 09:45:10] INFO: Daemon is running
+[2024-10-17 09:45:20] INFO: Daemon is running
+[2024-10-17 09:45:30] INFO: Daemon is running
+[2024-10-17 09:45:40] INFO: Daemon is running
+[2024-10-17 09:45:50] INFO: Daemon is running
+[2024-10-17 09:46:00] INFO: Daemon is running
+[2024-10-17 09:46:10] INFO: Daemon is running
+[2024-10-17 09:46:20] INFO: Daemon is running
+[2024-10-17 09:46:30] INFO: Daemon is running
+[2024-10-17 09:46:40] INFO: Daemon is running
+[2024-10-17 09:46:50] INFO: Daemon is running
+[2024-10-17 09:47:00] INFO: Daemon is running
+[2024-10-17 09:47:10] INFO: Daemon is running
+[2024-10-17 09:47:20] INFO: Daemon is running
+[2024-10-17 09:47:30] INFO: Daemon is running
+[2024-10-17 09:47:40] INFO: Daemon is running
+[2024-10-17 09:47:50] INFO: Daemon is running
+[2024-10-17 09:48:00] INFO: Daemon is running
+[2024-10-17 09:48:10] INFO: Daemon is running
+[2024-10-17 09:48:20] INFO: Daemon is running
+[2024-10-17 09:48:30] INFO: Daemon is running
+[2024-10-17 09:48:40] INFO: Daemon is running
+[2024-10-17 09:48:50] INFO: Daemon is running
+[2024-10-17 09:49:00] INFO: Client 3 disconnected
+[2024-10-17 09:49:00] INFO: Daemon is running
+[2024-10-17 09:49:05] INFO: Received command : insert 123
+[2024-10-17 09:49:05] INFO: Received command : insert 123
+[2024-10-17 09:49:05] INFO: Received command : insert 123
+[2024-10-17 09:49:05] INFO: Received command : insert 123
+[2024-10-17 09:49:05] INFO: Client 1 disconnected
+[2024-10-17 09:49:10] INFO: Daemon is running
+[2024-10-17 09:49:20] INFO: Daemon is running
+[2024-10-17 09:49:30] INFO: Daemon is running
+[2024-10-17 09:49:40] INFO: Daemon is running
+[2024-10-17 09:49:50] INFO: Daemon is running
+[2024-10-17 09:50:00] INFO: Daemon is running
+[2024-10-17 09:50:10] INFO: Daemon is running
+[2024-10-17 09:50:20] INFO: Daemon is running
+[2024-10-17 09:50:30] INFO: Daemon is running
+[2024-10-17 09:50:40] INFO: Daemon is running
+[2024-10-17 09:50:50] INFO: Daemon is running
+[2024-10-17 09:51:00] INFO: Daemon is running
+[2024-10-17 09:51:10] INFO: Daemon is running
+[2024-10-17 09:51:20] INFO: Daemon is running
+[2024-10-17 09:51:30] INFO: Daemon is running
+[2024-10-17 09:51:40] INFO: Daemon is running
+[2024-10-17 09:51:50] INFO: Daemon is running
+[2024-10-17 09:52:00] INFO: Daemon is running
+[2024-10-17 09:52:10] INFO: Daemon is running
+[2024-10-17 09:52:20] INFO: Daemon is running
+[2024-10-17 09:52:30] INFO: Daemon is running
+[2024-10-17 09:52:40] INFO: Daemon is running
+[2024-10-17 09:52:50] INFO: Daemon is running
+[2024-10-17 09:52:55] INFO: *******************
+[2024-10-17 09:52:55] INFO:    Starting lynx   
+[2024-10-17 09:52:55] INFO: *******************
+[2024-10-17 09:52:55] INFO: server_sock : 0
+[2024-10-17 09:52:55] ERROR: Bind failed
+[2024-10-17 09:53:00] INFO: Daemon is running
+[2024-10-17 10:01:34] INFO: *******************
+[2024-10-17 10:01:34] INFO:    Starting lynx   
+[2024-10-17 10:01:34] INFO: *******************
+[2024-10-17 10:01:34] INFO: server_sock : 0
+[2024-10-17 10:01:38] INFO: Received command : insert 123
+[2024-10-17 10:01:39] INFO: Received command : select
+[2024-10-17 10:01:41] INFO: Received command : insert 111
+[2024-10-17 10:01:42] INFO: Client 1232392552 disconnected
+[2024-10-17 10:01:44] INFO: Daemon is running
+[2024-10-17 10:01:54] INFO: Daemon is running
+[2024-10-17 10:02:04] INFO: Daemon is running
+[2024-10-17 10:02:14] INFO: Daemon is running
+[2024-10-17 10:02:39] INFO: *******************
+[2024-10-17 10:02:39] INFO:    Starting lynx   
+[2024-10-17 10:02:39] INFO: *******************
+[2024-10-17 10:02:39] INFO: server_sock : 0
+[2024-10-17 10:02:43] INFO: Received command : insert 123
+[2024-10-17 10:02:45] INFO: Client 1 disconnected
+[2024-10-17 10:02:45] INFO: Client -651371256 disconnected
+[2024-10-17 10:02:49] INFO: Daemon is running
+[2024-10-17 10:02:59] INFO: Daemon is running
+[2024-10-17 10:03:09] INFO: Daemon is running
+[2024-10-17 10:03:19] INFO: Daemon is running
+[2024-10-17 10:03:29] INFO: Daemon is running
+[2024-10-17 10:03:39] INFO: Daemon is running
+[2024-10-17 10:03:49] INFO: Daemon is running
+[2024-10-17 10:03:59] INFO: Daemon is running
+[2024-10-17 10:04:09] INFO: Daemon is running
+[2024-10-17 10:04:19] INFO: Daemon is running
+[2024-10-17 10:04:29] INFO: Daemon is running
+[2024-10-17 10:04:39] INFO: Daemon is running
+[2024-10-17 10:04:49] INFO: Daemon is running
+[2024-10-17 10:04:59] INFO: Daemon is running
+[2024-10-17 10:05:09] INFO: Daemon is running
+[2024-10-17 10:05:19] INFO: Daemon is running
+[2024-10-17 10:05:29] INFO: Daemon is running
+[2024-10-17 10:05:39] INFO: Daemon is running
+[2024-10-17 10:05:49] INFO: Daemon is running
+[2024-10-17 10:05:59] INFO: Daemon is running
+[2024-10-17 10:06:09] INFO: Daemon is running
+[2024-10-17 10:06:19] INFO: Daemon is running
+[2024-10-17 10:06:29] INFO: Daemon is running
+[2024-10-17 10:06:39] INFO: Daemon is running
+[2024-10-17 10:06:49] INFO: Daemon is running
+[2024-10-17 10:06:59] INFO: Daemon is running
+[2024-10-17 10:07:09] INFO: Daemon is running
+[2024-10-17 10:07:19] INFO: Daemon is running
+[2024-10-17 10:07:29] INFO: Daemon is running
+[2024-10-17 10:07:39] INFO: Daemon is running
+[2024-10-17 10:07:49] INFO: Daemon is running
+[2024-10-17 10:07:59] INFO: Daemon is running
+[2024-10-17 10:08:09] INFO: Daemon is running
+[2024-10-17 10:08:19] INFO: Daemon is running
+[2024-10-17 10:08:29] INFO: *******************
+[2024-10-17 10:08:29] INFO:    Starting lynx   
+[2024-10-17 10:08:29] INFO: *******************
+[2024-10-17 10:08:29] INFO: server_sock : 0
+[2024-10-17 10:08:32] INFO: Received command : insert 123
+[2024-10-17 10:08:35] INFO: Client 1 disconnected
+[2024-10-17 10:08:39] INFO: Daemon is running
+[2024-10-17 10:08:49] INFO: Daemon is running
+[2024-10-17 10:08:59] INFO: Daemon is running
+[2024-10-17 10:09:09] INFO: Daemon is running
+[2024-10-17 10:09:19] INFO: Daemon is running
+[2024-10-17 10:09:29] INFO: Daemon is running
+[2024-10-17 10:09:39] INFO: Daemon is running
+[2024-10-17 10:09:49] INFO: Daemon is running
+[2024-10-17 10:09:59] INFO: Daemon is running
+[2024-10-17 10:10:09] INFO: Daemon is running
+[2024-10-17 10:10:19] INFO: Daemon is running
+[2024-10-17 10:10:29] INFO: Daemon is running
+[2024-10-17 10:10:39] INFO: Daemon is running
+[2024-10-17 10:10:49] INFO: Daemon is running
+[2024-10-17 10:10:59] INFO: Daemon is running
+[2024-10-17 10:11:09] INFO: Daemon is running
+[2024-10-17 10:11:19] INFO: Daemon is running
+[2024-10-17 10:11:29] INFO: Daemon is running
+[2024-10-17 10:11:39] INFO: Daemon is running
+[2024-10-17 10:11:49] INFO: Daemon is running
+[2024-10-17 10:11:59] INFO: Daemon is running
+[2024-10-17 10:12:09] INFO: Daemon is running
+[2024-10-17 10:12:19] INFO: Daemon is running

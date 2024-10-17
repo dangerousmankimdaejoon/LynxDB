@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/lynx.dir/src/common.c.o.d"
   "CMakeFiles/lynx.dir/src/main.c.o"
   "CMakeFiles/lynx.dir/src/main.c.o.d"
+  "CMakeFiles/lynx.dir/src/parser/parser_standard.c.o"
+  "CMakeFiles/lynx.dir/src/parser/parser_standard.c.o.d"
   "lynx"
   "lynx.pdb"
 )

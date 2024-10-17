@@ -9,6 +9,7 @@
 #include <sys/prctl.h>
 #include <sys/stat.h>
 #include <time.h>
+#include <errno.h>
 
 #include "../include/main.h"
 
@@ -55,7 +56,7 @@ FILE* open_log_file() {
 
     FILE *log_file = fopen(log_filename, "a");
     if (log_file == NULL) {
-        perror("Error opening log file");
+        lx_log("ERROR", strerror(errno), "Error opening log file");
         exit(1);
     }
     return log_file;
@@ -96,8 +97,7 @@ void lx_info(const char *format, ...) {
     va_list args;
     va_start(args, format);
     
-    lx_log("INFO", format, args);
-
+    lx_log("INFO", format, args); 
     va_end(args);
 }
 
@@ -132,13 +132,15 @@ void create_lx_db_session(int server_sock, char *argv[]) {
 
                 client_sock = accept(server_sock, (struct sockaddr *)&client_addr, &client_len);
                 if (client_sock < 0) {
-                    perror("accept failed");
+                    lx_log("ERROR", strerror(errno), "accept failed");
                     exit(EXIT_FAILURE);
                 }
 
                 handle_client(client_sock);
             }
             exit(0);
+        } else {
+            waitpid(-1, NULL, WNOHANG);
         }
     }
 }
@@ -154,7 +156,16 @@ void handle_client(int client_sock) {
     char query_result[RESULT_SIZE];
 
     while(1) {
-        recv(client_sock, query_command, sizeof(query_command), 0);
+        int bytes_received = recv(client_sock, query_command, sizeof(query_command), 0);
+
+        if (bytes_received == 0) {
+            lx_log("INFO", "Client %d disconnected", client_sock);
+            break;
+        }
+        if (bytes_received < 0) {
+            lx_log("ERROR", strerror(errno), "recv failed");
+            break;
+        }
         
         lx_log("INFO", "Received command : %s", query_command);
 
@@ -163,12 +174,15 @@ void handle_client(int client_sock) {
             FILE* file = fopen("/home/seer/lynx/build/test.db", "a");
 
             if (file == NULL) {
-                lx_log("ERROR", "Error opening file");
-                exit(1);
+                lx_log("ERROR", strerror(errno), "Error opening file");
+                break;
             }
-
+            
             fprintf(file, substring(query_command, 7, -1));
             fclose(file);
+            
+            // initialize the received COMMAND variable
+            memset(query_command, 0, sizeof(query_command));
 
             send(client_sock, "Insert complete", strlen("Insert complete"), 0);
         }
@@ -176,8 +190,8 @@ void handle_client(int client_sock) {
             FILE* file = fopen("/home/seer/lynx/build/test.db", "r");
 
             if (file == NULL) {
-                perror("Error opening file");
-                exit(1);
+                lx_log("ERROR", strerror(errno), "Error opening file");
+                break;
             }
 
             while (fgets(query_result, RESULT_SIZE, file) != NULL) {
@@ -186,8 +200,10 @@ void handle_client(int client_sock) {
 
             fclose(file);
         }
-        else if(strncmp(query_command, "quit", 6) == 0 || strncmp(query_command, "exit", 6) == 0) {
-            
+        else if(strncmp(query_command, "quit", 4) == 0 || strncmp(query_command, "exit", 4) == 0) {
+            lx_log("INFO", "Client %d disconnected", client_sock);
+            send(client_sock, "exit", strlen("exit"), 0);
+            break;
         }
         else {
             printf("command error");

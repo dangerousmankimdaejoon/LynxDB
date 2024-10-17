@@ -100,12 +100,12 @@ src/clean:
 CMakeFiles/lynx.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lynx.dir/build.make CMakeFiles/lynx.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lynx.dir/build.make CMakeFiles/lynx.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/seer/lynx/build/CMakeFiles --progress-num=1,2,3 "Built target lynx"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/seer/lynx/build/CMakeFiles --progress-num=1,2,3,4 "Built target lynx"
 .PHONY : CMakeFiles/lynx.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/lynx.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/seer/lynx/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/seer/lynx/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/lynx.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/seer/lynx/build/CMakeFiles 0
 .PHONY : CMakeFiles/lynx.dir/rule
@@ -126,7 +126,7 @@ CMakeFiles/lynx.dir/clean:
 CMakeFiles/xsql.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/xsql.dir/build.make CMakeFiles/xsql.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/xsql.dir/build.make CMakeFiles/xsql.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/seer/lynx/build/CMakeFiles --progress-num=4,5,6 "Built target xsql"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/seer/lynx/build/CMakeFiles --progress-num=5,6,7 "Built target xsql"
 .PHONY : CMakeFiles/xsql.dir/all
 
 # Build rule for subdir invocation for target.
