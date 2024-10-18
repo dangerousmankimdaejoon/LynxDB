@@ -1,10 +1,15 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/lynx.dir/generated/lex.yy.c.o"
+  "CMakeFiles/lynx.dir/generated/lex.yy.c.o.d"
+  "CMakeFiles/lynx.dir/generated/standard.tab.c.o"
+  "CMakeFiles/lynx.dir/generated/standard.tab.c.o.d"
   "CMakeFiles/lynx.dir/src/common.c.o"
   "CMakeFiles/lynx.dir/src/common.c.o.d"
   "CMakeFiles/lynx.dir/src/main.c.o"
   "CMakeFiles/lynx.dir/src/main.c.o.d"
-  "CMakeFiles/lynx.dir/src/parser/parser_standard.c.o"
-  "CMakeFiles/lynx.dir/src/parser/parser_standard.c.o.d"
+  "generated/lex.yy.c"
+  "generated/standard.tab.c"
+  "generated/standard.tab.h"
   "lynx"
   "lynx.pdb"
 )

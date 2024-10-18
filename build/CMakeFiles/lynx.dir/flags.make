@@ -4,7 +4,7 @@
 # compile C with /bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/seer/lynx/include
+C_INCLUDES = -I/home/seer/lynx/include -I/home/seer/lynx/build/generated
 
 C_FLAGS = -std=gnu99
 

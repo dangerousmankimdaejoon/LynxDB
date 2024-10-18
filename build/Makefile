@@ -142,6 +142,54 @@ xsql/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/xsql.dir/build.make CMakeFiles/xsql.dir/build
 .PHONY : xsql/fast
 
+generated/lex.yy.o: generated/lex.yy.c.o
+.PHONY : generated/lex.yy.o
+
+# target to build an object file
+generated/lex.yy.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lynx.dir/build.make CMakeFiles/lynx.dir/generated/lex.yy.c.o
+.PHONY : generated/lex.yy.c.o
+
+generated/lex.yy.i: generated/lex.yy.c.i
+.PHONY : generated/lex.yy.i
+
+# target to preprocess a source file
+generated/lex.yy.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lynx.dir/build.make CMakeFiles/lynx.dir/generated/lex.yy.c.i
+.PHONY : generated/lex.yy.c.i
+
+generated/lex.yy.s: generated/lex.yy.c.s
+.PHONY : generated/lex.yy.s
+
+# target to generate assembly for a file
+generated/lex.yy.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lynx.dir/build.make CMakeFiles/lynx.dir/generated/lex.yy.c.s
+.PHONY : generated/lex.yy.c.s
+
+generated/standard.tab.o: generated/standard.tab.c.o
+.PHONY : generated/standard.tab.o
+
+# target to build an object file
+generated/standard.tab.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lynx.dir/build.make CMakeFiles/lynx.dir/generated/standard.tab.c.o
+.PHONY : generated/standard.tab.c.o
+
+generated/standard.tab.i: generated/standard.tab.c.i
+.PHONY : generated/standard.tab.i
+
+# target to preprocess a source file
+generated/standard.tab.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lynx.dir/build.make CMakeFiles/lynx.dir/generated/standard.tab.c.i
+.PHONY : generated/standard.tab.c.i
+
+generated/standard.tab.s: generated/standard.tab.c.s
+.PHONY : generated/standard.tab.s
+
+# target to generate assembly for a file
+generated/standard.tab.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lynx.dir/build.make CMakeFiles/lynx.dir/generated/standard.tab.c.s
+.PHONY : generated/standard.tab.c.s
+
 src/client.o: src/client.c.o
 .PHONY : src/client.o
 
@@ -217,30 +265,6 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lynx.dir/build.make CMakeFiles/lynx.dir/src/main.c.s
 .PHONY : src/main.c.s
 
-src/parser/parser_standard.o: src/parser/parser_standard.c.o
-.PHONY : src/parser/parser_standard.o
-
-# target to build an object file
-src/parser/parser_standard.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lynx.dir/build.make CMakeFiles/lynx.dir/src/parser/parser_standard.c.o
-.PHONY : src/parser/parser_standard.c.o
-
-src/parser/parser_standard.i: src/parser/parser_standard.c.i
-.PHONY : src/parser/parser_standard.i
-
-# target to preprocess a source file
-src/parser/parser_standard.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lynx.dir/build.make CMakeFiles/lynx.dir/src/parser/parser_standard.c.i
-.PHONY : src/parser/parser_standard.c.i
-
-src/parser/parser_standard.s: src/parser/parser_standard.c.s
-.PHONY : src/parser/parser_standard.s
-
-# target to generate assembly for a file
-src/parser/parser_standard.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lynx.dir/build.make CMakeFiles/lynx.dir/src/parser/parser_standard.c.s
-.PHONY : src/parser/parser_standard.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -251,6 +275,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... lynx"
 	@echo "... xsql"
+	@echo "... generated/lex.yy.o"
+	@echo "... generated/lex.yy.i"
+	@echo "... generated/lex.yy.s"
+	@echo "... generated/standard.tab.o"
+	@echo "... generated/standard.tab.i"
+	@echo "... generated/standard.tab.s"
 	@echo "... src/client.o"
 	@echo "... src/client.i"
 	@echo "... src/client.s"
@@ -260,9 +290,6 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/parser/parser_standard.o"
-	@echo "... src/parser/parser_standard.i"
-	@echo "... src/parser/parser_standard.s"
 .PHONY : help
 
 

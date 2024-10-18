@@ -69,24 +69,21 @@ include CMakeFiles/lynx.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/lynx.dir/flags.make
 
-CMakeFiles/lynx.dir/src/parser/parser_standard.c.o: CMakeFiles/lynx.dir/flags.make
-CMakeFiles/lynx.dir/src/parser/parser_standard.c.o: /home/seer/lynx/src/parser/parser_standard.c
-CMakeFiles/lynx.dir/src/parser/parser_standard.c.o: CMakeFiles/lynx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seer/lynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/lynx.dir/src/parser/parser_standard.c.o"
-	/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lynx.dir/src/parser/parser_standard.c.o -MF CMakeFiles/lynx.dir/src/parser/parser_standard.c.o.d -o CMakeFiles/lynx.dir/src/parser/parser_standard.c.o -c /home/seer/lynx/src/parser/parser_standard.c
+generated/standard.tab.c: /home/seer/lynx/src/parser/standard.y
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/seer/lynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Bison parser"
+	bison -d -o /home/seer/lynx/build/generated/standard.tab.c ../src/parser/standard.y
 
-CMakeFiles/lynx.dir/src/parser/parser_standard.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lynx.dir/src/parser/parser_standard.c.i"
-	/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seer/lynx/src/parser/parser_standard.c > CMakeFiles/lynx.dir/src/parser/parser_standard.c.i
+generated/standard.tab.h: generated/standard.tab.c
+	@$(CMAKE_COMMAND) -E touch_nocreate generated/standard.tab.h
 
-CMakeFiles/lynx.dir/src/parser/parser_standard.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lynx.dir/src/parser/parser_standard.c.s"
-	/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seer/lynx/src/parser/parser_standard.c -o CMakeFiles/lynx.dir/src/parser/parser_standard.c.s
+generated/lex.yy.c: /home/seer/lynx/src/parser/standard.l
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/seer/lynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Flex lexer"
+	flex -o /home/seer/lynx/build/generated/lex.yy.c ../src/parser/standard.l
 
 CMakeFiles/lynx.dir/src/main.c.o: CMakeFiles/lynx.dir/flags.make
 CMakeFiles/lynx.dir/src/main.c.o: /home/seer/lynx/src/main.c
 CMakeFiles/lynx.dir/src/main.c.o: CMakeFiles/lynx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seer/lynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/lynx.dir/src/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seer/lynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/lynx.dir/src/main.c.o"
 	/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lynx.dir/src/main.c.o -MF CMakeFiles/lynx.dir/src/main.c.o.d -o CMakeFiles/lynx.dir/src/main.c.o -c /home/seer/lynx/src/main.c
 
 CMakeFiles/lynx.dir/src/main.c.i: cmake_force
@@ -100,7 +97,7 @@ CMakeFiles/lynx.dir/src/main.c.s: cmake_force
 CMakeFiles/lynx.dir/src/common.c.o: CMakeFiles/lynx.dir/flags.make
 CMakeFiles/lynx.dir/src/common.c.o: /home/seer/lynx/src/common.c
 CMakeFiles/lynx.dir/src/common.c.o: CMakeFiles/lynx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seer/lynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/lynx.dir/src/common.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seer/lynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/lynx.dir/src/common.c.o"
 	/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lynx.dir/src/common.c.o -MF CMakeFiles/lynx.dir/src/common.c.o.d -o CMakeFiles/lynx.dir/src/common.c.o -c /home/seer/lynx/src/common.c
 
 CMakeFiles/lynx.dir/src/common.c.i: cmake_force
@@ -111,21 +108,51 @@ CMakeFiles/lynx.dir/src/common.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lynx.dir/src/common.c.s"
 	/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seer/lynx/src/common.c -o CMakeFiles/lynx.dir/src/common.c.s
 
+CMakeFiles/lynx.dir/generated/standard.tab.c.o: CMakeFiles/lynx.dir/flags.make
+CMakeFiles/lynx.dir/generated/standard.tab.c.o: generated/standard.tab.c
+CMakeFiles/lynx.dir/generated/standard.tab.c.o: CMakeFiles/lynx.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seer/lynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/lynx.dir/generated/standard.tab.c.o"
+	/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lynx.dir/generated/standard.tab.c.o -MF CMakeFiles/lynx.dir/generated/standard.tab.c.o.d -o CMakeFiles/lynx.dir/generated/standard.tab.c.o -c /home/seer/lynx/build/generated/standard.tab.c
+
+CMakeFiles/lynx.dir/generated/standard.tab.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lynx.dir/generated/standard.tab.c.i"
+	/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seer/lynx/build/generated/standard.tab.c > CMakeFiles/lynx.dir/generated/standard.tab.c.i
+
+CMakeFiles/lynx.dir/generated/standard.tab.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lynx.dir/generated/standard.tab.c.s"
+	/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seer/lynx/build/generated/standard.tab.c -o CMakeFiles/lynx.dir/generated/standard.tab.c.s
+
+CMakeFiles/lynx.dir/generated/lex.yy.c.o: CMakeFiles/lynx.dir/flags.make
+CMakeFiles/lynx.dir/generated/lex.yy.c.o: generated/lex.yy.c
+CMakeFiles/lynx.dir/generated/lex.yy.c.o: CMakeFiles/lynx.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seer/lynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/lynx.dir/generated/lex.yy.c.o"
+	/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lynx.dir/generated/lex.yy.c.o -MF CMakeFiles/lynx.dir/generated/lex.yy.c.o.d -o CMakeFiles/lynx.dir/generated/lex.yy.c.o -c /home/seer/lynx/build/generated/lex.yy.c
+
+CMakeFiles/lynx.dir/generated/lex.yy.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lynx.dir/generated/lex.yy.c.i"
+	/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seer/lynx/build/generated/lex.yy.c > CMakeFiles/lynx.dir/generated/lex.yy.c.i
+
+CMakeFiles/lynx.dir/generated/lex.yy.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lynx.dir/generated/lex.yy.c.s"
+	/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seer/lynx/build/generated/lex.yy.c -o CMakeFiles/lynx.dir/generated/lex.yy.c.s
+
 # Object files for target lynx
 lynx_OBJECTS = \
-"CMakeFiles/lynx.dir/src/parser/parser_standard.c.o" \
 "CMakeFiles/lynx.dir/src/main.c.o" \
-"CMakeFiles/lynx.dir/src/common.c.o"
+"CMakeFiles/lynx.dir/src/common.c.o" \
+"CMakeFiles/lynx.dir/generated/standard.tab.c.o" \
+"CMakeFiles/lynx.dir/generated/lex.yy.c.o"
 
 # External object files for target lynx
 lynx_EXTERNAL_OBJECTS =
 
-lynx: CMakeFiles/lynx.dir/src/parser/parser_standard.c.o
 lynx: CMakeFiles/lynx.dir/src/main.c.o
 lynx: CMakeFiles/lynx.dir/src/common.c.o
+lynx: CMakeFiles/lynx.dir/generated/standard.tab.c.o
+lynx: CMakeFiles/lynx.dir/generated/lex.yy.c.o
 lynx: CMakeFiles/lynx.dir/build.make
 lynx: CMakeFiles/lynx.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/seer/lynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable lynx"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/seer/lynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable lynx"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lynx.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -136,7 +163,9 @@ CMakeFiles/lynx.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/lynx.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/lynx.dir/clean
 
-CMakeFiles/lynx.dir/depend:
+CMakeFiles/lynx.dir/depend: generated/lex.yy.c
+CMakeFiles/lynx.dir/depend: generated/standard.tab.c
+CMakeFiles/lynx.dir/depend: generated/standard.tab.h
 	cd /home/seer/lynx/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/seer/lynx /home/seer/lynx /home/seer/lynx/build /home/seer/lynx/build /home/seer/lynx/build/CMakeFiles/lynx.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/lynx.dir/depend
 

@@ -2,5 +2,3 @@
 /home/seer/lynx/build/CMakeFiles/xsql.dir
 /home/seer/lynx/build/CMakeFiles/edit_cache.dir
 /home/seer/lynx/build/CMakeFiles/rebuild_cache.dir
-/home/seer/lynx/build/src/CMakeFiles/edit_cache.dir
-/home/seer/lynx/build/src/CMakeFiles/rebuild_cache.dir
